@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PlatziPlanetas</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+<style type="text/css">
+	
+body{
+
+background-image:url('https://i.ytimg.com/vi/VJIxbhO8WdM/maxresdefault.jpg');
+background-repeat: no-repeat;
+background-position: center center;
+background-attachment: fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+color:white;
+	
+}
+	img.contenedor{
+		
+		height:100px;
+		width:100px;
+		margin-bottom: 1cm;
+	}
+  img.footer2{
+  	display:block;
+margin:auto;
+margin-bottom: 1cm;
+  }
+</style>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+	<div class="col-lg-12 col-md-6 col-xs-12 col-sm-12">
+<img class="footer2" src="https://lh3.googleusercontent.com/F_AHjuSy6hEZWf3pd30b1MmEannRjiISySeY7ZDTVLIPMXO60WKSF5n_fanrdPk4Qg=w300">
+</div>
+</div>
+
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="form-group">
+<form id="formupeso" name="formupeso" method="POST">
+<input type="number"  class="form-control" name="pesotxt" onkeyup="CalcularPeso()" id="pesotxt" placeholder="Digita tu peso">
+</div> 
+			<div class="col-lg-2 col-md-4 col-xs-6 col-sm-12">
+				<img class="contenedor" src="assets/images/martes.png">
+           <input type="text"  class="form-control" name="planetamarte"  id="planetamarte" disabled  >
+		</div>
+		<div class="col-lg-2 col-md-4 col-xs-6 col-sm-12">
+				<img  class="contenedor" src="assets/images/jupiter.png">
+				 <input type="text"  class="form-control" name="planetajupiter"  id="planetajupiter" disabled >
+		</div>
+		<div class="col-lg-2 col-md-4 col-xs-6 col-sm-12">
+				<img  class="contenedor" src="assets/images/urano.png">
+				 <input type="text"  class="form-control" name="planetaurano"  id="planetaurano" disabled>
+		</div>
+		<div class="col-lg-2 col-md-4 col-xs-6 col-sm-12">
+				<img  class="contenedor" src="assets/images/saturno.png">
+				 <input type="text"  class="form-control" name="planetasaturno"  id="planetasaturno" disabled>
+		</div>
+		<div class="col-lg-2 col-md-4 col-xs-6 col-sm-12">
+				<img  class="contenedor" src="assets/images/neptune.png">
+				 <input type="text"  class="form-control" name="planetaneptuno"  id="planetaneptuno" disabled>
+		</div>
+		<div class="col-lg-2 col-md-4 col-xs-6 col-sm-12">
+				<img  class="contenedor" src="assets/images/venus.png">
+				 <input type="text"  class="form-control" name="planetavenus"  id="planetavenus" disabled>
+		</div>
+		</form>
+	</div>
+</div>
+
+<script type="text/javascript">
+	function CalcularPeso(){
+	// en mi variable Peso recibe el valor que el usuario digita en el input digita tu pesa en ella se guarda ese valor	
+var peso=document.formupeso.pesotxt.value;
+// definimos las diferentes variables que guardaran la grabedad de cada planeta
+var g_tierra = 9.8;
+var g_marte = 3.7;
+var g_jupiter = 24.7;
+var g_pluton = 0.62;
+var g_urano =8.69;
+var g_saturno =10.44;
+var g_neptuno = 11.15;
+var g_venus = 8.87;
+var peso_mostrar;
+
+
+function marte(){
+peso_mostrar = peso * g_marte / g_tierra;  
+var esova = peso_mostrar.toFixed(1)
+document.formupeso.planetamarte.value=esova+" kilos";
+
+	}
+	function jupiter(){
+peso_mostrar = peso * g_jupiter / g_tierra;  
+var esova = peso_mostrar.toFixed(1)
+document.formupeso.planetajupiter.value=esova+" kilos";
+	}
+
+		function urano(){
+peso_mostrar = peso * g_urano / g_tierra;  
+var esova = peso_mostrar.toFixed(1)
+document.formupeso.planetaurano.value=esova+" kilos";
+	}
+
+
+		function saturno(){
+peso_mostrar = peso * g_saturno / g_tierra;  
+var esova = peso_mostrar.toFixed(1)
+document.formupeso.planetasaturno.value=esova+" kilos";
+	}
+
+
+		function neptuno(){
+peso_mostrar = peso * g_neptuno / g_tierra;  
+var esova = peso_mostrar.toFixed(1)
+document.formupeso.planetaneptuno.value=esova+" kilos";
+	}
+
+
+		function venus(){
+peso_mostrar = peso * g_venus / g_tierra;  
+var esova = peso_mostrar.toFixed(1)
+document.formupeso.planetavenus.value=esova+" kilos";
+	}
+
+	marte();
+	jupiter();
+	urano();
+	saturno();
+	neptuno();
+	venus();
+}
+	
+
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
